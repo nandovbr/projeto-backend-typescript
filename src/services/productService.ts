@@ -1,7 +1,7 @@
 import * as productModel from '../models/productModel';
 import { InterfaceProduct } from '../interfaces/interfaceProduct';
 
-export async function createProd(product: InterfaceProduct) {
+export default async function createProd(product: InterfaceProduct) {
   const result = await productModel.createProd(product);
 
   if (!result) {
