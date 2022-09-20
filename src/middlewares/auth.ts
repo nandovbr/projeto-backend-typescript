@@ -13,11 +13,11 @@ if (!JWT_SECRET) {
 export const createToken = (username: InterfaceUser) => {
   const token = jwt.sign({ username }, JWT_SECRET);
   return token;
-}
+};
 
 export const validToken = (req: Request, res: Response, next: NextFunction) => {
-const { username } = req.body;
-// console.log('password: ', username)
+  const { username } = req.body;
+  // console.log('password: ', username)
 
   if (!username) {
     return res.status(401).json({ message: 'Invalid password' });
@@ -26,6 +26,6 @@ const { username } = req.body;
   const token = createToken(username);
   // console.log('token: ', token)
 
-  res.status(201).json({token});
+  res.status(201).json({ token });
   next();
-}
+};
