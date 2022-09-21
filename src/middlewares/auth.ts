@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { NextFunction, Request, Response } from 'express';
+import { Request, Response } from 'express';
 import { InterfaceUser } from '../interfaces/interfaceUser';
 
 const JWT_SECRET = 'trybe';
@@ -15,7 +15,7 @@ export const createToken = (username: InterfaceUser) => {
   return token;
 };
 
-export const validToken = (req: Request, res: Response, next: NextFunction) => {
+export const validToken = (req: Request, res: Response) => {
   const { username } = req.body;
   // console.log('password: ', username)
 
@@ -27,5 +27,4 @@ export const validToken = (req: Request, res: Response, next: NextFunction) => {
   // console.log('token: ', token)
 
   res.status(201).json({ token });
-  next();
 };

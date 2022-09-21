@@ -2,7 +2,7 @@ import { ResultSetHeader } from 'mysql2';
 import connection from './connection';
 import { InterfaceUser } from '../interfaces/interfaceUser';
 
-export async function createUser(user: InterfaceUser)
+export default async function createUser(user: InterfaceUser)
   : Promise<void> {
   const { username, classe, level, password } = user;
   await connection.execute<ResultSetHeader>(

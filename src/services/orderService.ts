@@ -1,7 +1,7 @@
 import * as orderModel from '../models/orderModel';
 import { InterfaceOrder } from '../interfaces/interfaceOrder';
 
-export async function getOrders() {
+export default async function getOrders() {
   const orders: InterfaceOrder[] = await orderModel.getOrders();
 
   if (!orders) {

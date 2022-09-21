@@ -1,7 +1,7 @@
 import connection from './connection';
 import { InterfaceOrder } from '../interfaces/interfaceOrder';
 
-export async function getOrders()
+export default async function getOrders()
 : Promise<InterfaceOrder[]> {
   const [orders] = await connection.execute(
     `SELECT ord.id, ord.userId, JSON_ARRAYAGG(prod.id) AS productsIds
