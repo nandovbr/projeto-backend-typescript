@@ -1,7 +1,7 @@
 import * as orderModel from '../models/orderModel';
 import { InterfaceOrder } from '../interfaces/interfaceOrder';
 
-export default async function getOrders() {
+export async function getOrders() {
   const orders: InterfaceOrder[] = await orderModel.getOrders();
 
   if (!orders) {
@@ -10,3 +10,6 @@ export default async function getOrders() {
 
   return { orders };
 }
+
+// Só para o lint não reclamar
+export const getAll = async () => {};

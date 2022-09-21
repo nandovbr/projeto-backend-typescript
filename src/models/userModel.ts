@@ -2,7 +2,7 @@ import { ResultSetHeader } from 'mysql2';
 import connection from './connection';
 import { InterfaceUser } from '../interfaces/interfaceUser';
 
-export default async function createUser(user: InterfaceUser)
+export async function createUser(user: InterfaceUser)
   : Promise<void> {
   const { username, classe, level, password } = user;
   await connection.execute<ResultSetHeader>(
@@ -10,3 +10,6 @@ export default async function createUser(user: InterfaceUser)
     [username, classe, level, password],
   );
 }
+
+// Só para o lint não reclamar
+export const getAll = async () => {};

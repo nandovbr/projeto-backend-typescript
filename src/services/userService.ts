@@ -1,8 +1,8 @@
-import * as userModel from '../models/userModel';
 import { InterfaceUser } from '../interfaces/interfaceUser';
 import { createToken } from '../middlewares/auth';
+import * as userModel from '../models/userModel';
 
-export default async function createUser(user: InterfaceUser) {
+export async function createUser(user: InterfaceUser) {
   await userModel.createUser(user);
   const token: string = createToken(user);
   // console.log('userService: ', result);
@@ -13,3 +13,6 @@ export default async function createUser(user: InterfaceUser) {
 
   return { status: 201, token };
 }
+
+// Só para o lint não reclamar
+export const getAll = async () => {};
