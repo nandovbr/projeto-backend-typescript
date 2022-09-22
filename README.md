@@ -1,4 +1,4 @@
-# 👨🏾‍💻 Criação e Busca de Dados no Banco de Dados Utilizando Typescript 👨🏾‍💻
+# 👨🏾‍💻 Criação e Busca de Dados no Banco de Dados e Uso do Typescript 👨🏾‍💻
 
 Os arquivos que desenvolvi nesse projeto são os conteúdos das pastas:
 
